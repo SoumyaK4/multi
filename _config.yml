@@ -9,12 +9,12 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://zones.arilyn.cc
-timezone:
+timezone: Asia/Calcutta
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Multilingual test # the main title
 
 tagline: A text-focused Jekyll theme # it will display as the subtitle
 
@@ -23,35 +23,20 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
-
-github:
-  username: github_username # change to your GitHub username
-
-twitter:
-  username: twitter_username # change to your Twitter username
+url: "https://multi.soumyak4.in"
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
+  name: SoumyaK4
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
+    - https://soumyak4.in
     - https://github.com/username # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
-
-# Site Verification Settings
-webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -62,16 +47,6 @@ analytics:
     id: # fill in your Google Analytics ID
   goatcounter:
     id: # fill in your GoatCounter ID
-  umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
-  matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
-  cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
-  fathom:
-    id: # fill in your Fathom Site ID
 
 # Page views settings
 pageviews:
@@ -90,6 +65,7 @@ pageviews:
 #
 theme_mode: # [light | dark]
 
+future: true
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
@@ -98,11 +74,11 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "/assets/img/Logo.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: "OG.png" # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -138,9 +114,9 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false # The option for PWA feature (installable)
   cache:
-    enabled: true # The option for PWA offline cache
+    enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.
@@ -151,6 +127,15 @@ paginate: 10
 
 # The base URL of your site
 baseurl: ""
+
+# --------------------------
+
+# Polyglot Settings
+languages: ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", cs-CZ, sl-SI]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public", "assets", "sitemap.xml", "robots.txt"]
+parallel_localization: true
+lang_from_path: true
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -192,9 +177,18 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: assets/img/favicons
+    values:
+      swcache: true
+  - scope:
+      path: assets/js/dist
+    values:
+      swcache: true
 
 sass:
   style: compressed
+  sourcemap: never
 
 compress_html:
   clippings: all
@@ -224,3 +218,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+plugins:
+  - jekyll-polyglot
+  - jekyll-redirect-from
