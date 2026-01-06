@@ -37,13 +37,12 @@
         </li>
         <!-- .nav-item -->
       {% endfor %}
+        <!-- 언어 선택기를 별도 섹션으로 분리 -->
+      <div class="lang-selector-wrapper w-100">
+        {%- include lang-selector.html -%}
+      </div>
     </ul>
   </nav>
-
-  <!-- 언어 선택기를 별도 섹션으로 분리 -->
-  <div class="lang-selector-wrapper w-100">
-    {%- include lang-selector.html -%}
-  </div>
 
   <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
     {% unless site.theme_mode %}
