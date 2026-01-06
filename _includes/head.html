@@ -232,4 +232,24 @@
   {% endif %}
 
   {% include metadata-hook.html %}
+
+<!-- Autoredirect on first visit -->
+
+<script>
+  (function () {
+    if (localStorage.getItem("preferred_lang")) return;
+
+    const supported = ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", "cs-CZ", "sl-SI"]
+    const fallback = "en";
+
+    let lang = (navigator.language || "").toLowerCase().split("-")[0];
+    if (!supported.includes(lang)) lang = fallback;
+
+    localStorage.setItem("preferred_lang", lang);
+
+    if (lang !== fallback) {
+      location.replace("/" + lang + "/");
+    }
+  })();
+</script>
 </head>

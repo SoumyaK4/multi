@@ -131,7 +131,7 @@ baseurl: ""
 # --------------------------
 
 # Polyglot Settings
-languages: ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", cs-CZ, sl-SI]
+languages: ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", "cs-CZ", "sl-SI"]
 default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "public", "assets", "sitemap.xml", "robots.txt"]
 parallel_localization: true
