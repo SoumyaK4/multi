@@ -240,7 +240,7 @@
   (function () {
     if (localStorage.getItem("preferred_lang")) return;
 
-    const supported = ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", "cs-CZ", "sl-SI"]
+    const supported = ["en", "ko", "ja", "zh-TW", "es", "pt-BR", "fr", "de", "cs-CZ", "sl-SI"];
     const fallback = "en";
 
     let lang = (navigator.language || "").toLowerCase().split("-")[0];
